@@ -1,5 +1,7 @@
 #+title: evil-gamepad
 
+[[file:./ps1_gamepad.png]]
+
 * evil-gamepad
 
 A gamepad-inspired keybinding layout for Evil in Emacs.
