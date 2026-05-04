@@ -30,6 +30,16 @@
                 #'evil-append))
     (evil-gamepad-mode -1)))
 
+(ert-deftest evil-gamepad-mode-binds-normal-tab-bar-keys ()
+  (let ((evil-normal-state-map (make-sparse-keymap))
+        (evil-visual-state-map (make-sparse-keymap)))
+    (evil-gamepad-mode 1)
+    (should (eq (lookup-key evil-normal-state-map (kbd "Q"))
+                #'tab-bar-switch-to-prev-tab))
+    (should (eq (lookup-key evil-normal-state-map (kbd "E"))
+                #'tab-bar-switch-to-next-tab))
+    (evil-gamepad-mode -1)))
+
 (ert-deftest evil-gamepad-mode-binds-visual-movement-keys ()
   (let ((evil-normal-state-map (make-sparse-keymap))
         (evil-visual-state-map (make-sparse-keymap)))
