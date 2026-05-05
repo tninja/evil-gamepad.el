@@ -1,6 +1,6 @@
 #+title: evil-gamepad
 
-[[file:./ps1_gamepad.png]]
+[[file:./ps1_gamepad_keymapping.png]]
 
 * evil-gamepad
 
