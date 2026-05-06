@@ -31,28 +31,28 @@ replacement for every default Evil binding.
 
 ** Normal state
 
-| Key | Command |
-|-----+----------------------------------------|
-| a   | evil-backward-char                     |
-| d   | evil-forward-char                      |
-| w   | evil-previous-line                     |
-| s   | evil-next-line                         |
-| q   | evil-backward-word-begin               |
-| e   | evil-forward-word-begin                |
-| Q   | evil-backward-sentence-begin           |
-| E   | evil-forward-sentence-begin            |
-| A   | evil-beginning-of-line                 |
-| D   | evil-end-of-line                       |
-| W   | evil-backward-paragraph                |
-| S   | evil-forward-paragraph                 |
-| C-w | evil-scroll-page-up                    |
-| C-s | evil-scroll-page-down                  |
-| h   | evil-delete-backward-char-and-join     |
-| H   | evil-delete-backward-word              |
-| k   | evil-delete-char                       |
-| x   | evil-delete                            |
-| l   | evil-append                            |
-| L   | evil-append-line                       |
+| Key | Command                      |
+|------+---------------------------------|
+| a    | evil-backward-char               |
+| d   | evil-forward-char                |
+| w   | evil-previous-line                |
+| s    | evil-next-line                    |
+| q   | evil-backward-word-begin        |
+| e   | evil-forward-word-begin          |
+| Q   | tab-bar-switch-to-prev-tab        |
+| E   | tab-bar-switch-to-next-tab        |
+| A   | evil-beginning-of-line            |
+| D   | evil-end-of-line                  |
+| W   | evil-backward-paragraph          |
+| S   | evil-forward-paragraph           |
+| C-w | evil-scroll-page-up               |
+| C-s  | evil-scroll-page-down             |
+| h   | evil-delete-backward-char-and-join |
+| H   | evil-delete-backward-word        |
+| k    | evil-delete-char                  |
+| x    | evil-delete                      |
+| l    | evil-append                     |
+| L    | evil-append-line                 |
 
 ** Visual state
 
@@ -66,8 +66,6 @@ Visual state keeps the same movement layout for consistency.
 | s   | evil-next-line                 |
 | q   | evil-backward-word-begin       |
 | e   | evil-forward-word-begin        |
-| Q   | evil-backward-sentence-begin   |
-| E   | evil-forward-sentence-begin    |
 | A   | evil-beginning-of-line         |
 | D   | evil-end-of-line               |
 | W   | evil-backward-paragraph        |

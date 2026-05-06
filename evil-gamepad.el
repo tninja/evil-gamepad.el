@@ -58,8 +58,6 @@
     ("s" . evil-next-line)
     ("q" . evil-backward-word-begin)
     ("e" . evil-forward-word-begin)
-    ("Q" . evil-backward-sentence-begin)
-    ("E" . evil-forward-sentence-begin)
     ("A" . evil-beginning-of-line)
     ("D" . evil-end-of-line)
     ("W" . evil-backward-paragraph)
