@@ -24,11 +24,16 @@
     (evil-gamepad-mode 1)
     (should (eq (lookup-key evil-normal-state-map (kbd "h"))
                 #'evil-delete-backward-char-and-join))
+    (should (eq (lookup-key evil-normal-state-map (kbd "j"))
+                #'evil-gamepad-avy-goto-char))
     (should (eq (lookup-key evil-normal-state-map (kbd "k"))
                 #'evil-delete-char))
     (should (eq (lookup-key evil-normal-state-map (kbd "l"))
                 #'evil-append))
     (evil-gamepad-mode -1)))
+
+(ert-deftest evil-gamepad-avy-goto-char-signals-when-avy-is-unavailable ()
+  (should-error (evil-gamepad-avy-goto-char) :type 'user-error))
 
 (ert-deftest evil-gamepad-mode-binds-normal-tab-bar-keys ()
   (let ((evil-normal-state-map (make-sparse-keymap))

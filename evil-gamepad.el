@@ -45,6 +45,7 @@
     ("C-s" . evil-scroll-page-down)
     ("h" . evil-delete-backward-char-and-join)
     ("H" . evil-delete-backward-word)
+    ("j" . evil-gamepad-avy-goto-char)
     ("k" . evil-delete-char)
     ("x" . evil-delete)
     ("l" . evil-append)
@@ -110,6 +111,15 @@
   "Revert optional search tweaks."
   (setq-default evil-symbol-word-search evil-gamepad--saved-symbol-word-search)
   (setq evil-search-module evil-gamepad--saved-search-module))
+
+(defun evil-gamepad-avy-goto-char ()
+  "Jump to a visible character with avy when available."
+  (interactive)
+  (when (not (fboundp 'avy-goto-char))
+    (require 'avy nil t))
+  (if (fboundp 'avy-goto-char)
+      (call-interactively #'avy-goto-char)
+    (user-error "avy is required for this binding; install the avy package")))
 
 (defun evil-gamepad-setup ()
   "Install evil-gamepad bindings into Evil state maps."

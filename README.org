@@ -13,7 +13,8 @@ layout:
 - Right hand for editing actions
 
 The package intentionally stays small. It only depends on Evil and focuses on
-core navigation and editing instead of third-party integrations.
+core navigation and editing instead of third-party integrations. The =j=
+binding can optionally use =avy= when that package is installed.
 
 * Design
 
@@ -49,6 +50,7 @@ replacement for every default Evil binding.
 | C-s  | evil-scroll-page-down             |
 | h   | evil-delete-backward-char-and-join |
 | H   | evil-delete-backward-word        |
+| j    | evil-gamepad-avy-goto-char       |
 | k    | evil-delete-char                  |
 | x    | evil-delete                      |
 | l    | evil-append                     |
@@ -92,6 +94,10 @@ If you use =use-package=:
   :config
   (evil-gamepad-mode 1))
 #+end_src
+
+If you want the =j= binding to jump with =avy=, install =avy= separately.
+Without =avy=, loading =evil-gamepad= still succeeds and the binding will show
+an explanatory error only when invoked.
 
 * Customization
 
