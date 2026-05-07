@@ -13,8 +13,8 @@ layout:
 - Right hand for editing actions
 
 The package intentionally stays small. It only depends on Evil and focuses on
-core navigation and editing instead of third-party integrations. The =j=
-binding can optionally use =avy= when that package is installed.
+core navigation and editing instead of third-party integrations. The =j= and =J=
+bindings can optionally use =avy= when that package is installed.
 
 * Design
 
@@ -48,11 +48,12 @@ replacement for every default Evil binding.
 | S   | evil-forward-paragraph           |
 | C-w | evil-scroll-page-up               |
 | C-s  | evil-scroll-page-down             |
-| h   | evil-delete-backward-char-and-join |
-| H   | evil-delete-backward-word        |
+| h   | magit-status                      |
 | j    | evil-gamepad-avy-goto-char       |
+| J   | evil-gamepad-avy-goto-line        |
 | k    | evil-delete-char                  |
-| x    | evil-delete                      |
+| K   | evil-delete-backward-char-and-join |
+| C-k | evil-delete-backward-word        |
 | l    | evil-append                     |
 | L    | evil-append-line                 |
 
@@ -95,8 +96,8 @@ If you use =use-package=:
   (evil-gamepad-mode 1))
 #+end_src
 
-If you want the =j= binding to jump with =avy=, install =avy= separately.
-Without =avy=, loading =evil-gamepad= still succeeds and the binding will show
+If you want the =j= and =J= bindings to jump with =avy=, install =avy= separately.
+Without =avy=, loading =evil-gamepad= still succeeds and the bindings will show
 an explanatory error only when invoked.
 
 * Customization
@@ -116,10 +117,14 @@ This enables:
 
 * Scope
 
-This package does not include bindings for:
+This package includes minimal integration with popular packages:
+
+- =h= key binding to =magit-status= for quick Git access
+- =j= and =J= bindings use =avy= when available
+
+Beyond these, the package does not include bindings for:
 
 - Helm
-- Magit
 - Org extensions
 - Python tooling
 - Multiple cursors
