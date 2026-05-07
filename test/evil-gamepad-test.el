@@ -83,3 +83,14 @@
     (evil-gamepad-mode -1)
     (should-not evil-symbol-word-search)
     (should (eq evil-search-module 'isearch))))
+
+(ert-deftest evil-gamepad-mode-binds-J-to-evil-gamepad-avy-goto-line ()
+  (let ((evil-normal-state-map (make-sparse-keymap))
+         (evil-visual-state-map (make-sparse-keymap)))
+    (evil-gamepad-mode 1)
+    (should (eq (lookup-key evil-normal-state-map (kbd "J"))
+                #'evil-gamepad-avy-goto-line))
+    (evil-gamepad-mode -1)))
+
+(ert-deftest evil-gamepad-avy-goto-line-signals-when-avy-is-unavailable ()
+  (should-error (evil-gamepad-avy-goto-line) :type 'user-error))

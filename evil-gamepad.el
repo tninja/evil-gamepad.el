@@ -43,8 +43,9 @@
     ("S" . evil-forward-paragraph)
     ("C-w" . evil-scroll-page-up)
     ("C-s" . evil-scroll-page-down)
+    ("h" . magit-status)
     ("j" . evil-gamepad-avy-goto-char)
-    ("J" . avy-goto-line)
+    ("J" . evil-gamepad-avy-goto-line)
     ("k" . evil-delete-char)
     ("K" . evil-delete-backward-char-and-join)
     ("C-k" . evil-delete-backward-word)
@@ -121,8 +122,18 @@
       (call-interactively #'avy-goto-char)
     (user-error "avy is required for this binding; install the avy package")))
 
+(defun evil-gamepad-avy-goto-line ()
+  "Jump to a visible line with avy when available."
+  (interactive)
+  (when (not (fboundp 'avy-goto-line))
+    (require 'avy nil t))
+  (if (fboundp 'avy-goto-line)
+      (call-interactively #'avy-goto-line)
+    (user-error "avy is required for this binding; install the avy package")))
+
 (defun evil-gamepad-setup ()
   "Install evil-gamepad bindings into Evil state maps."
+  (interactive)
   (evil-gamepad--install-bindings
    evil-normal-state-map
    evil-gamepad--normal-bindings
